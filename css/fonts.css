@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "EconomicaBold";
+    src: url("../assets/Other/fonts/EconomicaBold.eot");
+    src: url("../assets/Other/fonts/EconomicaBold.eot")
+            format("embedded-opentype"),
+        url("../assets/Other/fonts/EconomicaBold.woff2") format("woff2"),
+        url("../assets/Other/fonts/EconomicaBold.woff") format("woff"),
+        url("../assets/Other/fonts/EconomicaBold.ttf") format("truetype"),
+        url("../assets/Other/fonts/EconomicaBold.svg#EconomicaBold")
+            format("svg");
+}
+
+@font-face {
+    font-family: "EconomicaBold";
+    src: url("../assets/Other/fonts/EconomicaBold.eot");
+    src: url("../assets/Other/fonts/EconomicaBold.eot")
+            format("embedded-opentype"),
+        url("../assets/Other/fonts/EconomicaBold.woff2") format("woff2"),
+        url("../assets/Other/fonts/EconomicaBold.woff") format("woff"),
+        url("../assets/Other/fonts/EconomicaBold.ttf") format("truetype"),
+        url("../assets/Other/fonts/EconomicaBold.svg#EconomicaBold")
+            format("svg");
+}
+
+@font-face {
+    font-family: "EconomicaItalic";
+    src: url("../assets/Other/fonts/EconomicaItalic.eot");
+    src: url("../assets/Other/fonts/EconomicaItalic.eot")
+            format("embedded-opentype"),
+        url("../assets/Other/fonts/EconomicaItalic.woff2") format("woff2"),
+        url("../assets/Other/fonts/EconomicaItalic.woff") format("woff"),
+        url("../assets/Other/fonts/EconomicaItalic.ttf") format("truetype"),
+        url("../assets/Other/fonts/EconomicaItalic.svg#EconomicaItalic")
+            format("svg");
+}
+@font-face {
+    font-family: "EconomicaRegular";
+    src: url("../assets/Other/fonts/EconomicaRegular.eot");
+    src: url("../assets/Other/fonts/EconomicaRegular.eot")
+            format("embedded-opentype"),
+        url("../assets/Other/fonts/EconomicaRegular.woff2") format("woff2"),
+        url("../assets/Other/fonts/EconomicaRegular.woff") format("woff"),
+        url("../assets/Other/fonts/EconomicaRegular.ttf") format("truetype"),
+        url("../assets/Other/fonts/EconomicaRegular.svg#EconomicaRegular")
+            format("svg");
+}

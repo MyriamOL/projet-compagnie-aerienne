@@ -1,0 +1,44 @@
+@charset "utf-8";
+@import url("./fonts.css");
+@import url("./root.css");
+*,
+*::before,
+*::after {
+    /* border: 0.02rem solid var(--green); */
+    box-sizing: border-box;
+    margin: 0rem;
+    padding: 0rem;
+}
+/* *********************************************************** body */
+body {
+    font-family: "EconomicaRegular", Arial, Helvetica, sans-serif;
+    background: var(--white);
+    font-size: var(--font-size-16pt);
+    line-height: var(--line-height-L);
+}
+
+/* ****************************************** header & nav & footer */
+header {
+}
+nav {
+}
+footer {
+}
+/* ********************************* media queries pour l'adaptatif */
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 1400px) {
+}
+
+@media (min-width: 1600px) {
+}

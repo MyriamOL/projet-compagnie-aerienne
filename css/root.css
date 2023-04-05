@@ -1,0 +1,17 @@
+:root {
+    --font-size-12pt: 1rem;
+    --font-size-14pt: 1.1669rem;
+    --font-size-16pt: 1.3331rem;
+
+    --line-height-S: 1;
+    --line-height-M: 1.5;
+    --line-height-L: 2;
+
+    --border-radius: 0.3rem;
+
+    --white: #f0f3f4;
+    --white-yellow: #faf3e6;
+    --green: #1fdf64;
+    --orange: #ee7a55;
+    --red: #ed4245;
+}

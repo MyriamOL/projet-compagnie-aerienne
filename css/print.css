@@ -1,0 +1,14 @@
+@import url("./fonts.css");
+
+body > nav,
+body > footer {
+    display: none;
+}
+body {
+    background: none;
+    color: black;
+
+    font-family: "EconomicaRegular", Courier, monospace;
+    font-size: 1.3rem;
+    line-height: 2;
+}
