@@ -31,16 +31,22 @@ section form {
 }
 
 @media (min-width: 768px) {
+    section form {
+        display: flex;
+        flex-direction: row;
+    }
+    section input[type="submit"] {
+        margin-top: 3rem;
+    }
+    section {
+        margin: 18% 0;
+    }
 }
 
 @media (min-width: 992px) {
 }
 
 @media (min-width: 1200px) {
-    section form {
-        display: flex;
-        flex-direction: row;
-    }
 }
 
 @media (min-width: 1400px) {
