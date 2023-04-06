@@ -28,7 +28,7 @@ label{
     font-size: var(--font-size-12pt); 
 }
 
-a {
+section a ,section p{
     font-size: 1rem;
     margin-top: 5%;
     text-decoration: none;
@@ -37,7 +37,7 @@ a {
 a:hover{
     text-decoration: underline;
 }
-p {
+.condition {
     font-size: 1rem;
     margin-top: 5%;
     
@@ -45,7 +45,6 @@ p {
 .btnConditionGeneral{
     font-size: 8px;
 }
-
 
 
 input[type="submit"]
