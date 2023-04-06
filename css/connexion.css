@@ -28,7 +28,16 @@ label{
     font-size: var(--font-size-12pt); 
 }
 
-a,p {
+a {
+    font-size: 1rem;
+    margin-top: 5%;
+    text-decoration: none;
+    
+}
+a:hover{
+    text-decoration: underline;
+}
+p {
     font-size: 1rem;
     margin-top: 5%;
     
@@ -50,6 +59,12 @@ color:white;
   
 border-radius: var(--border-radius);
 }
+
+input[type="submit"]:hover{
+    background-color: rgb(41, 80, 184);
+    
+}
+
 
 
 input[type="text"]
