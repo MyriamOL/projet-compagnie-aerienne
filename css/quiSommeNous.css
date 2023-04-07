@@ -1,21 +1,70 @@
 @charset "UTF-8";
 @import url("./root.css");
 
+
+main {
+    display: flex;
+    justify-content: center;
+
+}
+
+h1{
+    margin-bottom: 15px;
+}
+
+.full-page {
+    width: 90%;
+
+}
+
+.first-text-block,
+.seconde-text-block,
+.third-text-block {
+    margin-bottom: 2%;
+}
+.third-text-block {
+    margin-bottom: 15%;
+}
+
+ .imgplage,.imghiver,.imgsavane{
+    max-width: 100%;
+} 
+figure{
+    margin: 1rem ;
+
+}
+
+.bottom-block {
+    padding: 10%;
+
+}
+
+.titre-bottom-block {
+    margin-top: 5%;
+}
+
 /* ********************************* media queries pour l'adaptatif */
 @media (min-width: 576px) {
+    .photos{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+    }
 }
 
 @media (min-width: 768px) {
-}
+   
+   
+    }
 
 @media (min-width: 992px) {
 }
 
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}
 
-@media (min-width: 1400px) {
-}
 
-@media (min-width: 1600px) {
-}
+
+@media (min-width: 1400px) {}
+
+@media (min-width: 1600px) {}
