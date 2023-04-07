@@ -12,7 +12,6 @@
 /* *********************************************************** body */
 body {
     font-family: "EconomicaRegular", Arial, Helvetica, sans-serif;
-    background: var(--background-00);
     font-size: var(--font-size-16pt);
     line-height: var(--line-height-L);
 }
@@ -74,6 +73,7 @@ footer div {
 }
 footer section {
     margin: 1rem;
+    flex-direction: column;
 }
 footer h3,
 footer p {
