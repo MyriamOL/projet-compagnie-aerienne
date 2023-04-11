@@ -7,12 +7,12 @@
         <!-- Favicon -->
         <link
             rel="icon"
-            href="./assets/img/faviconHeaderFooter/logo_48x48.png"
-        />
+            href="./assets/img/faviconHeaderFooter/logo_48x48.png" />
         <!-- Cascading Style Sheets -->
-        <link rel="stylesheet" media="print" href="../css/print.css" />
-        <link rel="stylesheet" media="screen" href="../css/style.css" />
-        <link rel="stylesheet" media="screen" href="../css/acceuil.css" />
+        <link rel="stylesheet" media="print" href="./css/print.css" />
+        <link rel="stylesheet" media="screen" href="./css/style.css" />
+        <link rel="stylesheet" media="screen" href="./css/accueil.css" />
+        <link rel="stylesheet" media="screen" href="./css/formulaire.css" />
     </head>
     <body>
         <!-- *************************************************** header & nav -->
@@ -21,8 +21,7 @@
                 <a href="./accueil.html" title="Retour à l'accueil">
                     <img
                         src="./assets/img/faviconHeaderFooter/logo_48x48.png"
-                        alt="Avion fessant le tour de la terre"
-                    />
+                        alt="Avion fessant le tour de la terre" />
                     <p>Reserva</p>
                 </a>
                 <div>
@@ -33,17 +32,17 @@
         <!-- ************************************************* main & section -->
         <main>
             <section>
-                <form action="">
+                <form class="sectionMain">
                     <div>
-                        <label for="">Lieu de départ</label>
+                        <label>Lieu de départ</label>
                         <input type="text" />
                     </div>
                     <div>
-                        <label for="">Lieu d'arrivé</label>
+                        <label>Lieu d'arrivé</label>
                         <input type="text" />
                     </div>
                     <div>
-                        <label for="">Date de départ</label>
+                        <label>Date de départ</label>
                         <input type="date" />
                     </div>
                     <div>
@@ -115,5 +114,50 @@
                 </div>
             </section>
         </footer>
+        <!-- ********************************************************** popup -->
+        <div id="popup" class="popup">
+            <div class="form-wrapper">
+                <a href="#" class="cross">&times;</a>
+                <h1>connexion</h1>
+                <form method="post">
+                    <div>
+                        <label for="email">Adresse e-mail</label>
+                        <input type="text" id="email" name="email" />
+                    </div>
+
+                    <div>
+                        <label for="mdp"
+                            >Mot de passe (6 charactères minimum)</label
+                        >
+                        <input
+                            type="password"
+                            minlength="6"
+                            id="mdp"
+                            name="mdp" />
+                    </div>
+
+                    <a href="recuperationMdp.html"> Mot de passe oublié </a>
+
+                    <p class="conditions">
+                        En me connectant j’accepte les conditions générales
+                        d’utilisation<br />
+                        et la déclaration sur la protection des données de
+                        Reserva ainsi <br />que les conditions générales
+                        d’utilisation de Reserva.
+                    </p>
+
+                    <input type="submit" value="Créer un compte" />
+                </form>
+
+                <div class="buttonPopup">
+                    <p>
+                        Vous n'avez pas de compte &nbsp<a
+                            href="creationCompte.html"
+                            >en créer un.</a
+                        >
+                    </p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
