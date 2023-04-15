@@ -1,6 +1,8 @@
 @charset "utf-8";
+
 @import url("./fonts.css");
 @import url("./root.css");
+
 *,
 *::before,
 *::after {
@@ -9,6 +11,7 @@
     margin: 0rem;
     padding: 0rem;
 }
+
 /* *********************************************************** body */
 body {
     font-family: "EconomicaRegular", Arial, Helvetica, sans-serif;
@@ -23,10 +26,12 @@ header {
     position: sticky;
     top: 0;
 }
+
 header a {
     display: flex;
     font-size: 2rem;
 }
+
 .buttonHeader {
     font-size: var(--font-size-16pt);
     border-radius: var(--border-radius);
@@ -34,30 +39,36 @@ header a {
     padding: 0.1rem 0.5rem;
     text-align: center;
 }
+
 .buttonHeader:hover {
     border: 0.1rem solid var(--orange);
     background: var(--orange);
 }
+
 .buttonHeader:focus,
 .buttonHeader:active {
     background: var(--orange);
     box-shadow: inset 0 0 1.3rem gray;
     border: 0.1rem solid gray;
 }
+
 nav {
     justify-content: space-between;
     width: 100%;
 }
+
 header,
 nav,
 footer {
     background: var(--white);
     display: flex;
 }
+
 header,
 footer {
     padding: 1rem;
 }
+
 header a,
 footer a {
     color: black;
@@ -68,17 +79,21 @@ footer {
     font-size: var(--font-size-12pt);
     flex-direction: column;
 }
+
 footer div {
     display: flex;
 }
+
 footer section {
     margin: 1rem;
     flex-direction: column;
 }
+
 footer h3,
 footer p {
     text-align: center;
 }
+
 footer .buttonFooter {
     border-radius: var(--border-radius);
     border: 0.1rem solid var(--green);
@@ -88,28 +103,34 @@ footer .buttonFooter {
     left: 50%;
     text-align: center;
 }
+
 footer .buttonFooter:hover {
     background: var(--green);
 }
+
 footer .buttonFooter:focus,
 footer .buttonFooter:active {
     box-shadow: inset 0 0 1.3rem gray;
     border: 0.1rem solid gray;
     background: var(--green);
 }
+
 footer .divSocial {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
+
 footer .social {
     border: 0.1rem solid var(--white);
     flex-direction: row;
 }
+
 footer .social:hover {
     border: 0.1rem solid var(--white);
     opacity: 0.5;
 }
+
 footer .social:focus,
 footer .social:active {
     border-radius: var(--border-radius);
@@ -117,16 +138,17 @@ footer .social:active {
     box-shadow: inset 0 0 1.3rem gray;
     border: 0.1rem solid gray;
 }
+
 /* ********************************* media queries pour l'adaptatif */
 @media (min-width: 576px) {
+
     header,
     footer {
         padding: 1rem 2rem;
     }
 }
 
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 
 @media (min-width: 992px) {
     footer {
@@ -134,11 +156,8 @@ footer .social:active {
     }
 }
 
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}
 
-@media (min-width: 1400px) {
-}
+@media (min-width: 1400px) {}
 
-@media (min-width: 1600px) {
-}
+@media (min-width: 1600px) {}

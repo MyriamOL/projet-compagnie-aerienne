@@ -1,9 +1,12 @@
-@import url("./fonts.css");
+@charset "utf-8";
 
-body > nav,
-body > footer {
+@import url("./root.css");
+
+body>nav,
+body>footer {
     display: none;
 }
+
 body {
     background: none;
     color: black;
