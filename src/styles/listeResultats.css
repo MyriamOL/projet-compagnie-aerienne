@@ -1,0 +1,129 @@
+@import url("./RootFontsPrint/root.css");
+
+/* barre d'informations de recherche */
+#listeResultats .searchInfo {
+    background-color: var(--color_0);
+    display: flex;
+    justify-content: center;
+    padding: .4rem;
+}
+
+#listeResultats .searchInfoElements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+#listeResultats .gares {
+    display: flex;
+    align-items: center;
+}
+
+#listeResultats .arrow-right {
+    width: 25px;
+    margin: 0 5px;
+}
+
+#listeResultats a {
+    color: inherit;
+    text-decoration: none;
+    font-size: var(--font-size-14pt);
+    border-radius: var(--border-radius);
+    padding: 0 1rem;
+    background-color: var(--color_3);
+}
+
+#listeResultats a:hover {
+    opacity: var(--opacity);
+}
+
+#listeResultats a:active,
+#listeResultats a:focus {
+    box-shadow: inset 0 0 1.3rem gray;
+    border: 0.1rem solid gray;
+}
+
+/* Affichage des resultats */
+#listeResultats .result-wrapper ul {
+    list-style-type: none;
+}
+
+#listeResultats .result-wrapper {
+    background: url(../assets/img/accueil/travel-g5d21d0563_1920.jpg) no-repeat center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+}
+
+#listeResultats .result-list {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+
+
+
+/* ********************************* media queries pour l'adaptatif */
+@media (min-width: 576px) {
+    #listeResultats .info-trajet {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 2% 0 0 0;
+    }
+
+    #listeResultats .horaire-societe {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 44%;
+    }
+}
+
+@media (min-width: 768px) {
+    #listeResultats .searchInfoElements {
+        width: 80%;
+    }
+
+    #listeResultats .horaire-societe {
+        width: 42%;
+    }
+}
+
+@media (min-width: 992px) {
+    #listeResultats .result-list {
+        width: 80%;
+    }
+
+    #listeResultats .searchInfoElements {
+        width: 70%;
+    }
+
+    #listeResultats .horaire-societe {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #listeResultats .searchInfoElements {
+        width: 60%;
+    }
+
+    #listeResultats .horaire-societe {
+        width: 39%;
+    }
+}
+
+@media (min-width: 1400px) {
+    #listeResultats .searchInfoElements {
+        width: 50%;
+    }
+
+    #listeResultats .result-list {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1600px) {}

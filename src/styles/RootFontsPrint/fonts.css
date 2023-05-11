@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "EconomicaBold";
+    src: url("../../assets/other/fonts/EconomicaBold.eot");
+    src: url("../../assets/other/fonts/EconomicaBold.eot") format("embedded-opentype"),
+        url("../../assets/other/fonts/EconomicaBold.woff2") format("woff2"),
+        url("../../assets/other/fonts/EconomicaBold.woff") format("woff"),
+        url("../../assets/other/fonts/EconomicaBold.ttf") format("truetype"),
+        url("../../assets/other/fonts/EconomicaBold.svg#EconomicaBold") format("svg");
+}
+
+@font-face {
+    font-family: "EconomicaBold";
+    src: url("../../assets/other/fonts/EconomicaBold.eot");
+    src: url("../../assets/other/fonts/EconomicaBold.eot") format("embedded-opentype"),
+        url("../../assets/other/fonts/EconomicaBold.woff2") format("woff2"),
+        url("../../assets/other/fonts/EconomicaBold.woff") format("woff"),
+        url("../../assets/other/fonts/EconomicaBold.ttf") format("truetype"),
+        url("../../assets/other/fonts/EconomicaBold.svg#EconomicaBold") format("svg");
+}
+
+@font-face {
+    font-family: "EconomicaItalic";
+    src: url("../../assets/other/fonts/EconomicaItalic.eot");
+    src: url("../../assets/other/fonts/EconomicaItalic.eot") format("embedded-opentype"),
+        url("../../assets/other/fonts/EconomicaItalic.woff2") format("woff2"),
+        url("../../assets/other/fonts/EconomicaItalic.woff") format("woff"),
+        url("../../assets/other/fonts/EconomicaItalic.ttf") format("truetype"),
+        url("../../assets/other/fonts/EconomicaItalic.svg#EconomicaItalic") format("svg");
+}
+
+@font-face {
+    font-family: "EconomicaRegular";
+    src: url("../../assets/other/fonts/EconomicaRegular.eot");
+    src: url("../../assets/other/fonts/EconomicaRegular.eot") format("embedded-opentype"),
+        url("../../assets/other/fonts/EconomicaRegular.woff2") format("woff2"),
+        url("../../assets/other/fonts/EconomicaRegular.woff") format("woff"),
+        url("../../assets/other/fonts/EconomicaRegular.ttf") format("truetype"),
+        url("../../assets/other/fonts/EconomicaRegular.svg#EconomicaRegular") format("svg");
+}

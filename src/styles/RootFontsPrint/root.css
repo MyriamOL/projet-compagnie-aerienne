@@ -1,0 +1,26 @@
+:root {
+    --font-size-12pt: 1rem;
+    --font-size-14pt: 1.17rem;
+    --font-size-16pt: 1.33rem;
+
+    --line-height-S: 1;
+    --line-height-M: 1.5;
+    --line-height-L: 2;
+
+    --border-radius: .4rem;
+
+    --opacity: .8;
+
+    --white: #f0f3f4;
+    --white-yellow: #faf3e6;
+    --green: #1fdf64;
+    --orange: #ee7a55;
+    --red: #ed4245;
+    --blue: rgb(41, 80, 184);
+
+    --color_0: #D95448;
+    --color_1: #40241E;
+    --color_2: #A68B6A;
+    --color_3: #BF843B;
+    --color_4: #D9C5A0;
+}

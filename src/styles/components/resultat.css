@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+@import url("../RootFontsPrint/fonts.css");
+@import url("../RootFontsPrint/root.css");
+
+.result-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    border: 1px solid black;
+    border-radius: var(--border-radius);
+    background: var(--white);
+    margin: 20px 0 20px 0;
+    /* remplace space-between sur .result-list  */
+}
+
+.result-item .info-trajet {
+    height: 95px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2% 5% 0 5%;
+}
+
+.result-item .horaire-societe {
+    display: flex;
+    flex-direction: column;
+}
+
+.result-item .horaires {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Info supplementaire a faire apparaitre en JS */
+.result-item.expanded {
+    /* height: 500px; */
+    height: 36rem;
+}
+
+.result-item .expandedInformation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 0.2rem solid var(--color_4);
+    width: 80%;
+    height: 355px;
+}
+
+.result-item .itineraire-valider {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.result-item .itineraire {
+    padding: .5rem;
+    margin: 0 .5rem;
+    border: .2rem solid var(--color_4);
+    border-radius: var(--border-radius);
+}
+
+.result-item .info-embarquement {
+    font-size: var(--font-size-12pt);
+    margin-left: 10%;
+    width: 50%;
+}
+
+.result-item .retour {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.result-item .btnValider {
+    font-size: var(--font-size-14pt);
+    border-radius: var(--border-radius);
+    padding: .5rem 1rem;
+    border: .1rem solid transparent;
+    background-color: var(--color_3);
+    cursor: pointer;
+}
+
+.result-item .btnValider:hover {
+    opacity: var(--opacity);
+}
+
+.result-item .btnValider:active,
+.result-item .btnValider:focus {
+    box-shadow: inset 0 0 1.3rem gray;
+    border: 0.1rem solid gray;
+}
+
+/* Fleche expand */
+.result-item .arrow-expand {
+    height: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-item .double-arrow {
+    width: 25px;
+    height: 25px;
+}
+
+.result-item .arrow-expand:hover {
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+    background-color: var(--color_0);
+    cursor: pointer;
+}
+
+/* ********************************* media queries pour l'adaptatif */
+@media (min-width: 576px) {
+    .result-item.expanded {
+        /* height: 500px; */
+        height: 25rem;
+    }
+
+    .result-item .info-trajet {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 2% 0 0 0;
+    }
+
+    .result-item .horaire-societe {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 44%;
+    }
+}
+
+@media (min-width: 768px) {
+    .result-item .horaire-societe {
+        width: 42%;
+    }
+}
+
+@media (min-width: 992px) {
+    .result-item .horaire-societe {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .result-item .horaire-societe {
+        width: 39%;
+    }
+}
+
+@media (min-width: 1400px) {}
+
+@media (min-width: 1600px) {}

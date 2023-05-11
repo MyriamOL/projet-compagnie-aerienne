@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+@import url("../RootFontsPrint/root.css");
+
+#formulaire {
+    /* width: 90%;
+    height: 90%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#formulaire button {
+    color: var(--blue);
+    background: none;
+    border: none;
+
+}
+
+#formulaire button:hover {
+    color: var(--blue);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#formulaire .form-wrapper {
+    width: 90%;
+    height: 100%;
+}
+
+#formulaire label,
+#formulaire button,
+#formulaire p {
+    font-size: var(--font-size-12pt);
+}
+
+#formulaire .conditions {
+    font-size: var(--font-size-12pt);
+    margin: 15px 0 25px 0;
+}
+
+#formulaire input[type="submit"] {
+    border: .1rem solid transparent;
+    width: 100%;
+    height: 50px;
+    font-size: 1rem;
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: var(--border-radius);
+}
+
+#formulaire input[type="submit"]:hover {
+    opacity: var(--opacity);
+    cursor: pointer;
+}
+
+#formulaire input:focus,
+#formulaire input:active {
+    box-shadow: inset 0 0 1.3rem gray;
+    border: 0.1rem solid gray;
+}
+
+#formulaire .input-text-field>input {
+    width: 100%;
+    height: 35px;
+    border-radius: var(--border-radius);
+}
+
+#formulaire .btnCreationCompte {
+    font-size: var(--font-size-12pt);
+}
+
+/* ********************************* media queries pour l'adaptatif */
+@media (min-width: 576px) {
+    #formulaire {
+        width: 480px;
+        height: 620px;
+    }
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}
+
+@media (min-width: 1600px) {}

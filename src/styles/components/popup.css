@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+@import url("../RootFontsPrint/fonts.css");
+@import url("../RootFontsPrint/root.css");
+
+#popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; */
+}
+
+#popup-container .popup-body {
+    position: absolute;
+    /* width: 90%;
+    height: 90%; */
+    border-radius: var(--border-radius);
+    background: var(--white);
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+
+#popup-container .closePopupCross {
+    position: absolute;
+    /* width: 20px; */
+    height: 20px;
+    /* background-color: none; */
+    border: none;
+    right: 1rem;
+    top: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* ********************************* media queries pour l'adaptatif */
+@media (min-width: 576px) {
+    /* #popup-container .popup-body {
+        width: 480px;
+        height: 620px;
+    } */
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}
+
+@media (min-width: 1600px) {}

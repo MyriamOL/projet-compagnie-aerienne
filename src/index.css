@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+@import url("./styles/RootFontsPrint/fonts.css");
+@import url("./styles/RootFontsPrint/root.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "EconomicaRegular", Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-16pt);
+  line-height: var(--line-height-L);
+}
+
+button,
+input {
+  font-family: "EconomicaRegular", Arial, Helvetica, sans-serif;
+}

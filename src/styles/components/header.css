@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+@import url("../RootFontsPrint/fonts.css");
+@import url("../RootFontsPrint/root.css");
+
+#main-header {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    position: sticky;
+    top: 0;
+    background: var(--color_4);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+#main-header a {
+    display: flex;
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+    align-items: center;
+}
+
+
+#main-header .buttonHeader {
+    font-size: var(--font-size-16pt);
+    border-radius: var(--border-radius);
+    border: .1rem solid transparent;
+    padding: .5rem 2rem;
+    text-align: center;
+    background: var(--color_3);
+    cursor: pointer;
+}
+
+#main-header .buttonHeader:hover {
+    opacity: var(--opacity);
+}
+
+#main-header .buttonHeader:focus,
+#main-header .buttonHeader:active {
+    background: var(--color_3);
+    box-shadow: inset 0 0 1.3rem gray;
+    border: 0.1rem solid gray;
+}
+
+#main-header nav {
+    padding: 0 1rem;
+    justify-content: space-between;
+    width: 100%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+}
+
+/* media queries pour l'adaptatif |||||||||||||||||||||||||||||||||||||||||||||||||| media queries pour l'adaptatif */
+@media (min-width: 576px) {
+    #main-header {
+        padding: 1rem 2rem;
+    }
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}
+
+@media (min-width: 1600px) {}

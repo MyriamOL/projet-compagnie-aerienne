@@ -1,0 +1,68 @@
+@import url("./RootFontsPrint/root.css");
+
+#quiSommesNous {
+    background: url(../assets/img/accueil/travel-g5d21d0563_1920.jpg) no-repeat center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#quiSommesNous section {
+    background: var(--white);
+    margin: 20%;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+
+
+#quiSommesNous .first-text-block,
+#quiSommesNous .seconde-text-block,
+#quiSommesNous .third-text-block {
+    margin-bottom: 2%;
+}
+
+#quiSommesNous .third-text-block {
+    margin-bottom: 15%;
+}
+
+#quiSommesNous .imgplage,
+#quiSommesNous .imghiver,
+#quiSommesNous .imgsavane {
+    max-width: 100%;
+}
+
+#quiSommesNous figure {
+    margin: 1rem;
+}
+
+#quiSommesNous .bottom-block {
+    padding: 10%;
+}
+
+#quiSommesNous .titre-bottom-block {
+    margin-top: 5%;
+}
+
+#quiSommesNous h1 {
+    margin-bottom: 15px;
+}
+
+/* media queries pour l'adaptatif |||||||||||||||||||||||||||||||||||||||||||||||||| media queries pour l'adaptatif */
+@media (min-width: 576px) {
+    #quiSommesNous .photos {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}
+
+@media (min-width: 1600px) {}
