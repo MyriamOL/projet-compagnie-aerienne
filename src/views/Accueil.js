@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "../styles/accueil.css";
 import { useNavigate } from "react-router-dom";
 
@@ -26,17 +26,64 @@ export default function Accueil() {
     navigate('/liste-resultats');
   }
 
+
+
+  /* select */
+  const [airports, setAirports] = useState([]);
+
+  const url = "http://api.aviationstack.com/v1/airports?access_key=9fffb88916d797a2e1f992a65b7b50d2";
+
+  const loadAirports = useCallback(async () => {
+    const response = await fetch(url);
+    const airports = await response.json();
+    setAirports(airports);
+  }, []);
+
+  useEffect(() => {
+    console.log('didMount/didUpdate');
+
+    loadAirports();
+    fetch(url).then((response) => {
+      return response.json();
+    }).then((airports) => {
+      setAirports(airports);
+    });
+
+    return () => {
+      console.log('willUnmount');
+    }
+  }, [loadAirports])//transmet la fonction à useEffect pour permettre de faire une 
+  //comparaison avant l'execution d'une mise à jour (didUpdate)
+
   return (
     <main id="accueil">
       <section>
         <form className="sectionMain" onSubmit={handleSubmit}>
           <div>
             <label>Lieu de départ</label>
-            <input type="text" onChange={handleChange} />
+            <select name="select-depart" onChange={handleChange}>
+              <option value="">--Please choose an option--</option>
+              {airports.data !== undefined ?
+
+                airports.data.map(airport => (
+                  <option>{airport.airport_name}</option>
+                ))
+
+                : null}
+            </select>
           </div>
           <div>
             <label>Lieu d'arrivé</label>
-            <input type="text" onChange={handleChange} />
+            <select name="select-arrivee" onChange={handleChange}>
+              <option value="">--Please choose an option--</option>
+              {airports.data !== undefined ?
+
+                airports.data.map(airport => (
+                  <option>{airport.airport_name}</option>
+                ))
+
+                : null}
+            </select>
           </div>
           <div>
             <label>Date de départ</label>
