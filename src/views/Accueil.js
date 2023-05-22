@@ -40,18 +40,7 @@ export default function Accueil() {
   }, []);
 
   useEffect(() => {
-    console.log('didMount/didUpdate');
-
     loadAirports();
-    fetch(url).then((response) => {
-      return response.json();
-    }).then((airports) => {
-      setAirports(airports);
-    });
-
-    return () => {
-      console.log('willUnmount');
-    }
   }, [loadAirports])//transmet la fonction à useEffect pour permettre de faire une 
   //comparaison avant l'execution d'une mise à jour (didUpdate)
 

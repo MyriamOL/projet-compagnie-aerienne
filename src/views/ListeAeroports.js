@@ -15,11 +15,8 @@ export default function ListeAeroports() {
     useEffect(() => {
         
         loadAirports();
-        fetch(url).then((response) => {
-            return response.json();
-        }).then((airports) => {
-            setAirports(airports);
-        });
+        
+        console.log("yee");
 
     }, [loadAirports])//transmet la fonction à useEffect pour permettre de faire une 
     //comparaison avant l'execution d'une mise à jour (didUpdate)
@@ -28,15 +25,15 @@ export default function ListeAeroports() {
         <>
             <main>
 
-                { airports.data!==undefined?
                 
-                airports.data.map(airport => (
+                {
+                airports.data && airports.data.map(airport => (
                     <ul key={airport.id}>
                         <li>{airport.airport_name}</li>
                     </ul>
                 ))
+                }
                 
-                :null}
         
             </main>
 

@@ -13,29 +13,10 @@ export default function Popup({ closePopup }) {
   const cross = closeIsHovered ? crossRed : crossBlack;
 
   /* quelle page afficher sur le popup */
-  const [connexionIsShowed, setConnexionIsShowed] = useState(true);
-  const [creationCompteIsShowed, setCreationCompteIsShowed] = useState(false);
-  const [recuperationMdpIsShowed, setRecuperationMdpIsShowed] = useState(false);
-
-  /* fonctions permettant de changer de page a afficher */
-  function showConnexion() {
-    setConnexionIsShowed(true);
-    setCreationCompteIsShowed(false);
-    setRecuperationMdpIsShowed(false);
-  }
-
-  function showCreationCompte() {
-    setConnexionIsShowed(false);
-    setCreationCompteIsShowed(true);
-    setRecuperationMdpIsShowed(false);
-  }
-
-  function showRecuperationMdp() {
-    setConnexionIsShowed(false);
-    setCreationCompteIsShowed(false);
-    setRecuperationMdpIsShowed(true);
-  }
-
+  /* valeurs de pageShowed : connexion, creationCompte, recuperationMdp */
+  const [pageShowed, setPageShowed] = useState("connexion");
+  
+  
   return (
     <div id="popup-container">
       <div className="popup-body">
@@ -48,25 +29,19 @@ export default function Popup({ closePopup }) {
           onMouseLeave={() => setCloseIsHovered(false)}
         />
 
-        {connexionIsShowed && (
+        {pageShowed==="connexion" && (
           <Connexion
-            goToCreationCompte={() => showCreationCompte()}
-            goToRecuperationMdp={() => showRecuperationMdp()}
+            goToCreationCompte={() => setPageShowed('creationCompte')}
+            goToRecuperationMdp={() => setPageShowed('recuperationMdp')}
           />
         )}
 
-        {creationCompteIsShowed && (
-          <CreationCompte
-            goToConnexion={() => showConnexion()}
-            goToRecuperationMdp={() => showRecuperationMdp()}
-          />
+        {pageShowed==="creationCompte" && (
+          <CreationCompte />
         )}
 
-        {recuperationMdpIsShowed && (
-          <RecuperationMdp
-            goToConnexion={() => showConnexion()}
-            goToCreationCompte={() => showCreationCompte()}
-          />
+        {pageShowed==="recuperationMdp" && (
+          <RecuperationMdp />
         )}
       </div>
     </div>
