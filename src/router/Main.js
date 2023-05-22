@@ -5,13 +5,19 @@ import QuiSommesNous from "../views/QuiSommesNous";
 import ListeResultats from "../views/ListeResultats";
 import ListeAeroports from "../views/ListeAeroports";
 
+
+
 export default function Main() {
   return (
     <Routes>
       <Route index element={<Accueil />} />
       <Route path="/qui-sommes-nous" element={<QuiSommesNous />} />
       <Route path="/liste-resultats" element={<ListeResultats />} />
-      <Route path="/liste-aeroports" element={<ListeAeroports />} />
+      <Route path="/list-aeroports" element={<ListeAeroports />}  />
+      
+
+      
+
     </Routes>
   );
 }
