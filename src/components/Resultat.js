@@ -6,15 +6,12 @@ import "../styles/components/resultat.css";
 
 import { useState, useRef } from "react";
 
-export default function Resultat({ hDep, hArr, compagnie, duree, nVol }) {
+export default function Resultat({ idList, hDep, hArr, compagnie, duree, nVol, aerDep, aerArr, terminalDep, gateDep, terminalArr, gateArr }) {
   /* etat de l'element resultat, true si il est ouvert */
   const [expanded, setExpanded] = useState(false);
 
   /* reference vers l'image double fleche */
   const arrowRef = useRef(null);
-
-  /* reference vers l'element principal li */
-  const itemRef = useRef(null);
 
   function switchExpand() {
     if (expanded === false) {
@@ -30,7 +27,7 @@ export default function Resultat({ hDep, hArr, compagnie, duree, nVol }) {
     <li
       id="resultat"
       className={`result-item ${expanded ? "expanded" : ""}`}
-      ref={itemRef}
+      key={idList}
     >
       <div className="info-trajet">
         <div className="horaire-societe">
@@ -44,25 +41,25 @@ export default function Resultat({ hDep, hArr, compagnie, duree, nVol }) {
         <div className="duree">{duree}</div>
       </div>
 
-      {expanded === true ? (
+      {expanded && (
         <div className="expandedInformation">
-          <div className="num-vol">Avion n°{nVol}</div>
+          <div className="num-vol">Vol n°{nVol}</div>
           <div className="itineraire-valider">
             <div className="itineraire">
               <ul>
                 <li>
-                  <span>{hDep}</span> :<span>Aeroport de Lyon</span>
+                  <span>{hDep}</span> : <span>{aerDep}</span>
                   <div className="info-embarquement">
-                    embarquement porte n°2
+                    <div>{terminalDep && `terminal ${terminalDep}`}</div>
+                    <div>{terminalDep && `porte ${gateDep}`}</div>
                   </div>
                 </li>
                 <li>
-                  <span>19:10</span> :<span>Aeroport de Toulouse</span>
-                  <div></div>
-                </li>
-                <li>
-                  <span>21:21</span> :<span>Aeroport de Paris</span>
-                  <div></div>
+                  <span>{hArr}</span> : <span>{aerArr}</span>
+                  <div className="info-embarquement">
+                    <div>{terminalArr && `terminal ${terminalArr}`}</div>
+                    <div>{gateArr && `porte ${gateArr}`}</div>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -77,7 +74,7 @@ export default function Resultat({ hDep, hArr, compagnie, duree, nVol }) {
             </div>
           </div>
         </div>
-      ) : null}
+      )}
 
       <div className="arrow-expand" onClick={() => switchExpand()}>
         <img
