@@ -29,7 +29,7 @@ export default function Accueil() {
   const [airports, setAirports] = useState([]);
 
   const url =
-    "http://api.aviationstack.com/v1/airports?access_key=6c3b4717facb660a591728666e5b37fb";
+    "http://api.aviationstack.com/v1/airports?access_key=a7dc730ff64b6884f4eec751b957d1e1";
 
   const loadAirports = useCallback(async () => {
     const response = await fetch(url);
