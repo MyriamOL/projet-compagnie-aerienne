@@ -40,7 +40,7 @@ export default function Accueil() {
     dispatch(setAeroportArr({ val: inputArrivee }));
     dispatch(setHeureDep({ val: inputDate }));
 
-    navigate('/liste-resultats');
+    navigate("/liste-resultats");
   }
 
   /* fetch aeroports */
@@ -58,7 +58,7 @@ export default function Accueil() {
 
   useEffect(() => {
     loadAirports();
-  }, [loadAirports])//transmet la fonction à useEffect pour permettre de faire une 
+  }, [loadAirports]); //transmet la fonction à useEffect pour permettre de faire une
   //comparaison avant l'execution d'une mise à jour (didUpdate)
 
   return (
