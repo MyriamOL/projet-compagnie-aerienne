@@ -7,7 +7,7 @@ function BilletsVoles() {
     <main id="BilletsVoles">
       <div className="Billet">
         <div className="titre">
-          <h1>Billets N°01</h1>
+          <h1>Reservation N°01</h1>
           <button>
             <svg
               width="1.5rem"
