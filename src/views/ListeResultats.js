@@ -12,9 +12,8 @@ import { useCallback, useEffect, useState } from "react";
 
 
 export default function ListeResultats() {
-
   /* redux */
-  const search = useSelector( (state) => state.search );
+  const search = useSelector((state) => state.search);
 
   /* fetch vols */
   const [vols, setVols] = useState([]);
@@ -33,10 +32,8 @@ export default function ListeResultats() {
   }, []);
 
   useEffect(() => {
-
     loadVols();
-
-  }, [loadVols])
+  }, [loadVols]);
 
   /* formatteur de date, prend en entree une chaine de charactere representant une date et renvoie en sortie l'heure sous le format hh:mm */
   function dateFormatter(dateStr) {
@@ -52,17 +49,16 @@ export default function ListeResultats() {
     const arr_d = new Date(arrivalStr);
 
     var seconds = (arr_d - dep_d) / 1000;
-    if(seconds<0) {
-      seconds+=1000*60*60*24;
+    if (seconds < 0) {
+      seconds += 1000 * 60 * 60 * 24;
     }
-    const hours = Math.floor(seconds/60/60);
-    const minutes = (seconds/60)%60;
+    const hours = Math.floor(seconds / 60 / 60);
+    const minutes = (seconds / 60) % 60;
 
     const h = hours >= 10 ? hours : "0" + hours;
     const m = minutes >= 10 ? minutes : "0" + minutes;
     return `${h}h${m}`;
   }
-
 
   return (
     <main id="listeResultats">
@@ -80,14 +76,17 @@ export default function ListeResultats() {
 
       <div className="result-wrapper">
         <ul className="result-list">
-          {
-            vols.data && vols.data.map((vols, index) => (
+          {vols.data &&
+            vols.data.map((vols, index) => (
               <Resultat
                 idList={index}
                 hDep={dateFormatter(vols.departure.scheduled)}
                 hArr={dateFormatter(vols.arrival.scheduled)}
                 compagnie={vols.airline.name}
-                duree={calculateDuration(vols.departure.scheduled, vols.arrival.scheduled)}
+                duree={calculateDuration(
+                  vols.departure.scheduled,
+                  vols.arrival.scheduled
+                )}
                 nVol={vols.flight.number}
                 aerDep={vols.departure.airport}
                 aerArr={vols.arrival.airport}
@@ -96,8 +95,7 @@ export default function ListeResultats() {
                 terminalArr={vols.arrival.terminal}
                 gateArr={vols.arrival.gate}
               />
-            ))
-          }
+            ))}
         </ul>
       </div>
     </main>

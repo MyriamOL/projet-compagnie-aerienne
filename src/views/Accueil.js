@@ -49,7 +49,7 @@ export default function Accueil() {
     navigate("/liste-resultats");
   }
 
-  /* fetch aeroports */
+  /* select */
   const [airports, setAirports] = useState([]);
   const access_key = "490709dfdb75e660a6932ae96687959a";
 
@@ -59,7 +59,6 @@ export default function Accueil() {
     const response = await fetch(url);
     const airports = await response.json();
     setAirports(airports);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -99,7 +98,7 @@ export default function Accueil() {
           </div>
           <div>
             <label>Date de départ</label>
-            <input type="date" onChange={handleInputDate} />
+            <input type="date" onChange={handleChange} />
           </div>
           <div>
             <input type="submit" value="Recherche" />
