@@ -6,7 +6,20 @@ import "../styles/components/resultat.css";
 
 import { useState, useRef } from "react";
 
-export default function Resultat({ idList, hDep, hArr, compagnie, duree, nVol, aerDep, aerArr, terminalDep, gateDep, terminalArr, gateArr }) {
+export default function Resultat({
+  idList,
+  hDep,
+  hArr,
+  compagnie,
+  duree,
+  nVol,
+  aerDep,
+  aerArr,
+  terminalDep,
+  gateDep,
+  terminalArr,
+  gateArr,
+}) {
   /* etat de l'element resultat, true si il est ouvert */
   const [expanded, setExpanded] = useState(false);
 
