@@ -72,14 +72,6 @@ export default function Accueil() {
         <form className="sectionMain" onSubmit={handleSubmit}>
           <div>
             <label>Lieu de départ</label>
-<<<<<<< HEAD
-            <select name="select-depart" onChange={handleChange}>
-              <option value="">--Please choose an option--</option>
-              {airports.data !== undefined
-                ? airports.data.map((airport) => (
-                    <option>{airport.airport_name}</option>
-                  ))
-=======
             <select name="select-depart" onChange={handleInputDep}>
               <option value="">Choisissez un aéroport</option>
               {airports.data !== undefined ?
@@ -88,20 +80,10 @@ export default function Accueil() {
                   <option key={airport.id} data-iata-code={airport.iata_code}>{airport.country_name + " / " + airport.airport_name}</option>
                 ))
 
->>>>>>> main
                 : null}
             </select>
           </div>
           <div>
-<<<<<<< HEAD
-            <label>Lieu d'arrivé</label>
-            <select name="select-arrivee" onChange={handleChange}>
-              <option value="">--Please choose an option--</option>
-              {airports.data !== undefined
-                ? airports.data.map((airport) => (
-                    <option>{airport.airport_name}</option>
-                  ))
-=======
             <label>Lieu d'arrivée</label>
             <select name="select-arrivee" onChange={handleInputArr}>
               <option value="">Choisissez un aéroport</option>
@@ -111,7 +93,6 @@ export default function Accueil() {
                   <option key={airport.id} data-iata-code={airport.iata_code}>{airport.country_name + " / " + airport.airport_name}</option>
                 ))
 
->>>>>>> main
                 : null}
             </select>
           </div>
