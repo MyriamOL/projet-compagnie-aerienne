@@ -1,19 +1,59 @@
+import { useSignIn } from "react-auth-kit";
 import "../styles/components/formulaire.css";
+import axios from "axios";
 
-export default function Connexion({ goToCreationCompte, goToRecuperationMdp }) {
+import { useState } from "react";
+
+export default function Connexion({ goToCreationCompte, goToRecuperationMdp, forceClosePopup }) {
+  /* connexion */
+  const signIn = useSignIn();
+  const apiUrl = "http://localhost:8080/connexion";
+
+  /* formulaire */
+  const [email, setEmail] = useState('');
+  const [mdp, setMdp] = useState('');
+
+  /* fonctions formulaire */
+  function handleChangeEmail(e) {
+    setEmail(e.target.value);
+  }
+
+  function handleChangeMdp(e) {
+    setMdp(e.target.value);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    axios.post(apiUrl, {
+      email: email,
+      mdp: mdp
+    })
+      .then((response) => {
+        console.log(response.data);
+        console.log(response.data.jwttoken);
+        signIn({
+          token: response.data.jwttoken,
+          tokenType: "Bearer",
+          expiresIn: 3600,
+          authState: email
+        })
+      })
+    }
+    
   return (
     <main id="formulaire">
       <div className="form-wrapper">
         <h2>Connexion</h2>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="input-text-field">
             <label htmlFor="email">Adresse e-mail</label>
-            <input type="text" id="email" name="email" />
+            <input type="text" id="email" name="email" onChange={handleChangeEmail} />
           </div>
           <div className="input-text-field">
-            <label htmlFor="mdp">Mot de passe (6 charactères minimum)</label>
-            <input type="password" minLength="6" id="mdp" name="mdp" />
+            <label htmlFor="mdp">Mot de passe</label>
+            <input type="password" id="mdp" name="mdp" onChange={handleChangeMdp} />
           </div>
 
           {/* <span className="form-link-nav" onClick={goToRecuperationMdp}>
