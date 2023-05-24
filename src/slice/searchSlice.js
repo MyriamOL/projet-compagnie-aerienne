@@ -5,7 +5,9 @@ export const searchSlice=createSlice({
     initialState: {
         aeroportDep: null,
         aeroportArr: null,
-        heureDep: null
+        iataDep: null,
+        iataArr: null,
+        jourDep: null
     },
     reducers: {
         setAeroportDep: (state, action) => {
@@ -14,12 +16,18 @@ export const searchSlice=createSlice({
         setAeroportArr: (state, action) => {
             state.aeroportArr=(action.payload.val);
         },
-        setHeureDep: (state, action) => {
-            state.heureDep=(action.payload.val);
+        setIataDep: (state, action) => {
+            state.iataDep=(action.payload.val);
+        },
+        setIataArr: (state, action) => {
+            state.iataArr=(action.payload.val);
+        },
+        setJourDep: (state, action) => {
+            state.jourDep=(action.payload.val);
         }
     }
 });
 
-export const { setAeroportDep, setAeroportArr, setHeureDep } = searchSlice.actions;
+export const { setAeroportDep, setAeroportArr, setIataDep, setIataArr, setJourDep } = searchSlice.actions;
 
 export default searchSlice.reducer;

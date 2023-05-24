@@ -3,7 +3,7 @@ import "../styles/accueil.css";
 import { useNavigate } from "react-router-dom";
 
 import { useDispatch } from 'react-redux';
-import { setAeroportDep, setAeroportArr, setHeureDep } from '../slice/searchSlice';
+import { setAeroportDep, setAeroportArr, setIataDep, setIataArr, setJourDep } from '../slice/searchSlice';
 
 
 export default function Accueil() {
@@ -11,6 +11,8 @@ export default function Accueil() {
   /* champs du formulaire */
   const [inputDepart, setInputDepart] = useState('');
   const [inputArrivee, setInputArrivee] = useState('');
+  const [inputIataDepart, setInputIataDepart] = useState('');
+  const [inputIataArrivee, setInputIataArrivee] = useState('');
   const [inputDate, setInputDate] = useState('');
 
   /* useNavigate */
@@ -22,10 +24,12 @@ export default function Accueil() {
   /* fonctions handle du formulaire */
   function handleInputDep(e) {
     setInputDepart(e.target.value);
+    setInputIataDepart(e.target.options[e.target.selectedIndex].dataset.iataCode);
   }
 
   function handleInputArr(e) {
     setInputArrivee(e.target.value);
+    setInputIataArrivee(e.target.options[e.target.selectedIndex].dataset.iataCode);
   }
 
   function handleInputDate(e) {
@@ -38,14 +42,16 @@ export default function Accueil() {
     /* envoie les données au store */
     dispatch(setAeroportDep({ val: inputDepart }));
     dispatch(setAeroportArr({ val: inputArrivee }));
-    dispatch(setHeureDep({ val: inputDate }));
+    dispatch(setIataDep({ val: inputIataDepart }));
+    dispatch(setIataArr({ val: inputIataArrivee }));
+    dispatch(setJourDep({ val: inputDate }));
 
     navigate("/liste-resultats");
   }
 
   /* fetch aeroports */
   const [airports, setAirports] = useState([]);
-  const access_key = "8d77f46e094aa317fce70f76f6c3ed8d";
+  const access_key = "088b0164a08d9fc6bb96cd4845ba8ce4";
 
   const url = `http://api.aviationstack.com/v1/airports?access_key=${access_key}`;
 
@@ -72,7 +78,7 @@ export default function Accueil() {
               {airports.data !== undefined ?
 
                 airports.data.map(airport => (
-                  <option key={airport.id}>{airport.country_name + " / " + airport.airport_name}</option>
+                  <option key={airport.id} data-iata-code={airport.iata_code}>{airport.country_name + " / " + airport.airport_name}</option>
                 ))
 
                 : null}
@@ -85,7 +91,7 @@ export default function Accueil() {
               {airports.data !== undefined ?
 
                 airports.data.map(airport => (
-                  <option key={airport.id}>{airport.country_name + " / " + airport.airport_name}</option>
+                  <option key={airport.id} data-iata-code={airport.iata_code}>{airport.country_name + " / " + airport.airport_name}</option>
                 ))
 
                 : null}

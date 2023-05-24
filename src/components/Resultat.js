@@ -5,6 +5,7 @@ import doubleArrowDown from "../assets/img/listeResultats/double-arrow-down-64.p
 import "../styles/components/resultat.css";
 
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Resultat({ idList, hDep, hArr, compagnie, duree, nVol, aerDep, aerArr, terminalDep, gateDep, terminalArr, gateArr }) {
   /* etat de l'element resultat, true si il est ouvert */
@@ -12,6 +13,16 @@ export default function Resultat({ idList, hDep, hArr, compagnie, duree, nVol, a
 
   /* reference vers l'image double fleche */
   const arrowRef = useRef(null);
+
+  /* useNavigate */
+  const navigate = useNavigate();
+
+  /* appel a l'api et redirection vers l'accueil */
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    navigate("/");
+  }
 
   function switchExpand() {
     if (expanded === false) {
@@ -64,10 +75,10 @@ export default function Resultat({ idList, hDep, hArr, compagnie, duree, nVol, a
               </ul>
             </div>
             <div className="retour">
-              <form action="resultats.html" method="post">
+              <form onSubmit={handleSubmit}>
                 <input
                   type="submit"
-                  value="Prendre ce vol"
+                  value="Reserver"
                   className="btnValider"
                 />
               </form>

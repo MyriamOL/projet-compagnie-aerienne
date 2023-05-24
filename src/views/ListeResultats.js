@@ -3,6 +3,7 @@ import arrowRight from "../assets/img/listeResultats/icons8-fleche-droite-50.png
 import Resultat from "../components/Resultat";
 
 import { Link } from "react-router-dom";
+
 import { useCallback, useEffect, useState } from "react";
 
 import { useSelector } from 'react-redux';
@@ -13,10 +14,12 @@ export default function ListeResultats() {
   /* redux */
   const search = useSelector( (state) => state.search );
 
+  /* fetch vols */
   const [vols, setVols] = useState([]);
-  const access_key = "8d77f46e094aa317fce70f76f6c3ed8d";
-  const dep_iata = "CDG";
-  const arr_iata = "NCE";
+  const access_key = "088b0164a08d9fc6bb96cd4845ba8ce4";
+  const dep_iata = search.iataDep;
+  const arr_iata = search.iataArr;
+  /* const flight_date = search.jourDep; */
 
   const url = `http://api.aviationstack.com/v1/flights?access_key=${access_key}&dep_iata=${dep_iata}&arr_iata=${arr_iata}`;
 
@@ -68,7 +71,7 @@ export default function ListeResultats() {
             <img className="arrow-right" src={arrowRight} alt="arrow" />
             <div className="gareArrivee">{search.aeroportArr}</div>
           </div>
-          <div className="dateDepart">{search.heureDep}</div>
+          <div className="dateDepart">{search.jourDep}</div>
           <Link to="/">Modifier</Link>
         </div>
       </div>
