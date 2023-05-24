@@ -27,7 +27,7 @@ function BilletsVoles() {
         </div>
         <div className="info">
           <div className="id">
-            <h2>ID</h2>
+            <h2>vol n°</h2>
             <p>14ASDE758</p>
           </div>
           <div className="reservation">

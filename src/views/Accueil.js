@@ -51,8 +51,7 @@ export default function Accueil() {
 
   /* fetch aeroports */
   const [airports, setAirports] = useState([]);
-  const access_key = "088b0164a08d9fc6bb96cd4845ba8ce4";
-
+  const access_key = "490709dfdb75e660a6932ae96687959a";
 
   const url = `http://api.aviationstack.com/v1/airports?access_key=${access_key}`;
 
