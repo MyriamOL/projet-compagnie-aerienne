@@ -4,7 +4,7 @@ export default function ListeAeroports() {
 
     const [airports, setAirports] = useState([]);
 
-    const url = "http://api.aviationstack.com/v1/airports?access_key=9fffb88916d797a2e1f992a65b7b50d2";
+    const url = "http://api.aviationstack.com/v1/airports?access_key=0362aa73f9c60679c2e3088d5ab22eb8";
 
     const loadAirports = useCallback(async () => {
         const response = await fetch(url);
@@ -16,13 +16,10 @@ export default function ListeAeroports() {
         
         loadAirports();
         
-        console.log("yee");
-
     }, [loadAirports])//transmet la fonction à useEffect pour permettre de faire une 
     //comparaison avant l'execution d'une mise à jour (didUpdate)
 
     return (
-        <>
             <main>
 
                 
@@ -36,7 +33,5 @@ export default function ListeAeroports() {
                 
         
             </main>
-
-        </>
     );
 }
