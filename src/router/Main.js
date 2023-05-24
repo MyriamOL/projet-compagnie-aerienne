@@ -6,6 +6,8 @@ import ListeResultats from "../views/ListeResultats";
 import ListeAeroports from "../views/ListeAeroports";
 import ListeVols from "../views/ListeVols";
 
+
+
 export default function Main() {
   return (
     <Routes>
@@ -14,6 +16,11 @@ export default function Main() {
       <Route path="/liste-resultats" element={<ListeResultats />} />
       <Route path="/liste-aeroports" element={<ListeAeroports />} />
       <Route path="/liste-vols" element={<ListeVols />} />
+      <Route path="/list-aeroports" element={<ListeAeroports />}  />
+      
+
+      
+
     </Routes>
   );
 }
