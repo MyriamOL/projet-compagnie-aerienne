@@ -11,10 +11,12 @@ export default function ListeResultats() {
   /* redux */
   const search = useSelector((state) => state.search);
 
+  /* fetch vols */
   const [vols, setVols] = useState([]);
-  const access_key = "c67ac57ca5fccd6642cb88f3bb7a2cbb";
-  const dep_iata = "CDG";
-  const arr_iata = "NCE";
+  const access_key = "490709dfdb75e660a6932ae96687959a";
+  const dep_iata = search.iataDep;
+  const arr_iata = search.iataArr;
+  /* const flight_date = search.jourDep; */
 
   const url = `http://api.aviationstack.com/v1/flights?access_key=${access_key}&dep_iata=${dep_iata}&arr_iata=${arr_iata}`;
 
@@ -63,7 +65,7 @@ export default function ListeResultats() {
             <img className="arrow-right" src={arrowRight} alt="arrow" />
             <div className="gareArrivee">{search.aeroportArr}</div>
           </div>
-          <div className="dateDepart">{search.heureDep}</div>
+          <div className="dateDepart">{search.jourDep}</div>
           <Link to="/">Modifier</Link>
         </div>
       </div>
