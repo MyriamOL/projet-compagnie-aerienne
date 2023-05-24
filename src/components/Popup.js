@@ -16,7 +16,6 @@ export default function Popup({ closePopup }) {
   /* valeurs de pageShowed : connexion, creationCompte, recuperationMdp */
   const [pageShowed, setPageShowed] = useState("connexion");
   
-  
   return (
     <div id="popup-container">
       <div className="popup-body">
@@ -33,6 +32,7 @@ export default function Popup({ closePopup }) {
           <Connexion
             goToCreationCompte={() => setPageShowed('creationCompte')}
             goToRecuperationMdp={() => setPageShowed('recuperationMdp')}
+            forceClosePopup={() => closePopup()}
           />
         )}
 
