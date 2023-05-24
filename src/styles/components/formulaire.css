@@ -70,7 +70,7 @@
     font-size: var(--font-size-12pt);
 }
 
-/* ********************************* media queries pour l'adaptatif */
+/* media queries pour l'adaptatif */
 @media (min-width: 576px) {
     #formulaire {
         width: 480px;
