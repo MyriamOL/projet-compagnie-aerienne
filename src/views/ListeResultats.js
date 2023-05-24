@@ -4,9 +4,11 @@ import Resultat from "../components/Resultat";
 
 import { Link } from "react-router-dom";
 
+import { useSelector } from 'react-redux';
+
+
 import { useCallback, useEffect, useState } from "react";
 
-import { useSelector } from 'react-redux';
 
 
 export default function ListeResultats() {
