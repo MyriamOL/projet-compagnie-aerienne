@@ -1,7 +1,4 @@
 @import url("./RootFontsPrint/root.css");
-#listeResultats {
-  height: 800px;
-}
 /* barre d'informations de recherche */
 #listeResultats .searchInfo {
   background-color: var(--color_0);

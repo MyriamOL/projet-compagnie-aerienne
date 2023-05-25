@@ -1,20 +1,38 @@
-import React from "react";
-
 import ResultatBilletsVoles from "../components/ResultatBilletsVoles";
+import { useCallback, useEffect, useState } from "react";
 
 function BilletsVoles() {
+
+  const [reservations, setReservations] = useState([]);
+  
+  const url = "http://localhost:8080/api/reservations";
+
+  const loadReservations = useCallback(async () => {
+    const response = await fetch(url);
+    const dataReservations = await response.json();
+    setReservations(dataReservations);
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    loadReservations();
+  }, [loadReservations]);
+
   return (
-    <main id="BilletsVoles">
-      <ResultatBilletsVoles vol="fefe" reservation="fefe" dateDepart="fefe" />
-      <ResultatBilletsVoles vol="fefe" reservation="fefe" dateDepart="fefe" />
-      <ResultatBilletsVoles vol="fefe" reservation="fefe" dateDepart="fefe" />
-      {/* {billetsVoles.data.map((billetsVoles) => (
-        <ResultatBilletsVoles
-          vol={billetsVoles}
-          reservation={billetsVoles}
-          dateDepart={billetsVoles}
-        />
-      ))} */}
+    <main id="BilletsVoles">      
+      <ul className="result-list">
+          {reservations &&
+            reservations.map((reservation) => (
+              <ResultatBilletsVoles
+                idList={reservation.idReservation}
+                nVol={reservation.numeroVol}
+                dateDepart={reservation.dateDepart}
+                aerDep={reservation.aeroportDepart}
+                aerArr={reservation.aeroportArrivee}
+              />
+            ))}
+        </ul>
+      
     </main>
   );
 }

@@ -5,7 +5,6 @@
     center/cover;
   background-attachment: fixed;
   display: flex;
-  height: 800px;
   align-items: center;
   justify-content: center;
   flex-direction: column;

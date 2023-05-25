@@ -1,21 +1,32 @@
 import React from "react";
 
-import "../styles/BilletsVoles.css";
+import arrowRight from "../assets/img/listeResultats/icons8-fleche-droite-50.png";
 
-function ResultatBilletsVoles({ idList }) {
+import "../styles/BilletsVoles.css";
+import { useNavigate } from "react-router-dom";
+
+function ResultatBilletsVoles({ idList, nVol, dateDepart, aerDep, aerArr }) {
+  const navigate = useNavigate();
+
+  async function deleteReservation() {
+    await fetch('http://localhost:8080/api/reservations/'+idList, { method: 'DELETE' });
+    navigate("/billets-voles");
+  }
+
   return (
-    <div className="Billet" key={idList}>
+    <li className="Billet" key={idList}>
+      <div className="info">
       <div className="titre">
-        <h1>Reservation N°01</h1>
-        <button>
+        <h1>Reservation N°{idList}</h1>
+        <button onClick={deleteReservation}>
           <svg
             width="1.5rem"
             height="1.5rem"
             fill="none"
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -24,21 +35,19 @@ function ResultatBilletsVoles({ idList }) {
           </svg>
         </button>
       </div>
-      <div className="info">
         <div className="id">
-          <h2>Vol N°01</h2>
-          <p>14ASDE7 58</p>
-        </div>
-        <div className="reservation">
-          <h2>Reservation</h2>
-          <p>text</p>
+          <h2>Vol N°</h2>
+          <p>{nVol}</p>
         </div>
         <div className="dateDepart">
           <h2>Date de depart</h2>
-          <p>25 juin 2021</p>
+          <p>{dateDepart}</p>
+        </div>
+        <div>
+          <div><span>{aerDep} <img className="arrow-right" src={arrowRight} alt="arrow" /></span><span>{aerArr}</span></div>
         </div>
       </div>
-    </div>
+    </li>
   );
 }
 

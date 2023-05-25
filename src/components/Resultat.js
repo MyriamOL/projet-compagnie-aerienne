@@ -20,6 +20,7 @@ export default function Resultat({
   gateDep,
   terminalArr,
   gateArr,
+  dateDepart
 }) {
   /* etat de l'element resultat, true si il est ouvert */
   const [expanded, setExpanded] = useState(false);
@@ -30,13 +31,6 @@ export default function Resultat({
   /* useNavigate */
   const navigate = useNavigate();
 
-  /* appel a l'api et redirection vers l'accueil */
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    navigate("/");
-  }
-
   function switchExpand() {
     if (expanded === false) {
       setExpanded(true);
@@ -45,6 +39,23 @@ export default function Resultat({
       setExpanded(false);
       arrowRef.current.src = doubleArrowDown;
     }
+  }
+
+  /* ajout de la reservation a la liste */
+  async function addReservation(e) {
+    e.preventDefault();
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+          "numeroVol": nVol,
+          "aeroportArrivee": aerArr,
+          "dateDepart": dateDepart,
+          "aeroportDepart": aerDep
+      })
+    };
+    await fetch('http://localhost:8080/api/reservations', requestOptions);
+    navigate("/billets-voles")
   }
 
   return (
@@ -88,7 +99,7 @@ export default function Resultat({
               </ul>
             </div>
             <div className="retour">
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={addReservation}>
                 <input
                   type="submit"
                   value="Reserver"
