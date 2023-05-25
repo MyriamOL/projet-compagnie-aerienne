@@ -59,6 +59,7 @@ export default function Accueil() {
     const response = await fetch(url);
     const airports = await response.json();
     setAirports(airports);
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -98,7 +99,7 @@ export default function Accueil() {
           </div>
           <div>
             <label>Date de départ</label>
-            <input type="date" onChange={handleChange} />
+            <input type="date" onChange={handleInputDate} />
           </div>
           <div>
             <input type="submit" value="Recherche" />
