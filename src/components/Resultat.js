@@ -6,6 +6,7 @@ import "../styles/components/resultat.css";
 
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useIsAuthenticated } from "react-auth-kit";
 
 export default function Resultat({
   idList,
@@ -31,6 +32,9 @@ export default function Resultat({
   /* useNavigate */
   const navigate = useNavigate();
 
+  /* authentification */
+  const isAuthenticated = useIsAuthenticated();
+
   function switchExpand() {
     if (expanded === false) {
       setExpanded(true);
@@ -55,7 +59,7 @@ export default function Resultat({
       })
     };
     await fetch('http://localhost:8080/api/reservations', requestOptions);
-    navigate("/billets-voles")
+    navigate("/liste-reservations")
   }
 
   return (
@@ -99,6 +103,7 @@ export default function Resultat({
               </ul>
             </div>
             <div className="retour">
+            {isAuthenticated() &&
               <form onSubmit={addReservation}>
                 <input
                   type="submit"
@@ -106,6 +111,7 @@ export default function Resultat({
                   className="btnValider"
                 />
               </form>
+            }
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
-import ResultatBilletsVoles from "../components/ResultatBilletsVoles";
+import ResultatBilletsVoles from "../components/Reservation";
 import { useCallback, useEffect, useState } from "react";
 
-function BilletsVoles() {
+function ListeReservations() {
 
   const [reservations, setReservations] = useState([]);
   
@@ -37,4 +37,4 @@ function BilletsVoles() {
   );
 }
 
-export default BilletsVoles;
+export default ListeReservations;

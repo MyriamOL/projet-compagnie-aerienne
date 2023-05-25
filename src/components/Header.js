@@ -35,7 +35,7 @@ export default function Header() {
         <div>
           {isAuthenticated() &&
           <button className="buttonHeader" >
-            <Link to="/billets-voles">
+            <Link to="/liste-reservations">
               Reservations
             </Link>
           </button>

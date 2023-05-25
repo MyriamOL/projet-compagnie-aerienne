@@ -2,15 +2,11 @@ import React from "react";
 
 import arrowRight from "../assets/img/listeResultats/icons8-fleche-droite-50.png";
 
-import "../styles/BilletsVoles.css";
-import { useNavigate } from "react-router-dom";
+import "../styles/listeReservations.css";
 
-function ResultatBilletsVoles({ idList, nVol, dateDepart, aerDep, aerArr }) {
-  const navigate = useNavigate();
-
+function Reservation({ idList, nVol, dateDepart, aerDep, aerArr }) {
   async function deleteReservation() {
     await fetch('http://localhost:8080/api/reservations/'+idList, { method: 'DELETE' });
-    navigate("/billets-voles");
   }
 
   return (
@@ -51,4 +47,4 @@ function ResultatBilletsVoles({ idList, nVol, dateDepart, aerDep, aerArr }) {
   );
 }
 
-export default ResultatBilletsVoles;
+export default Reservation;
