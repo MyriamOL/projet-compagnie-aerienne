@@ -3,9 +3,13 @@ import arrowRight from "../assets/img/listeResultats/icons8-fleche-droite-50.png
 import Resultat from "../components/Resultat";
 
 import { Link } from "react-router-dom";
+
+import { useSelector } from 'react-redux';
+
+
 import { useCallback, useEffect, useState } from "react";
 
-import { useSelector } from "react-redux";
+
 
 export default function ListeResultats() {
   /* redux */
@@ -13,7 +17,7 @@ export default function ListeResultats() {
 
   /* fetch vols */
   const [vols, setVols] = useState([]);
-  const access_key = "490709dfdb75e660a6932ae96687959a";
+  const access_key = "81cd61e40dee4a4e41f1a234cce4bef3";
   const dep_iata = search.iataDep;
   const arr_iata = search.iataArr;
   /* const flight_date = search.jourDep; */
@@ -37,6 +41,14 @@ export default function ListeResultats() {
     const h = d.getHours() >= 10 ? d.getHours() : "0" + d.getHours();
     const m = d.getMinutes() >= 10 ? d.getMinutes() : "0" + d.getMinutes();
     return `${h}:${m}`;
+  }
+
+  function fullDateFormatter(dateStr) {
+    const date = new Date(dateStr);
+    const y = date.getFullYear();
+    const m = date.getMonth();
+    const d = date.getDate();
+    return `${y}-${m}-${d}`;
   }
 
   /* calcule la duree entre deux heures et la renvoies sous forme de chaine de caractere */
@@ -90,6 +102,7 @@ export default function ListeResultats() {
                 gateDep={vols.departure.gate}
                 terminalArr={vols.arrival.terminal}
                 gateArr={vols.arrival.gate}
+                dateDepart={fullDateFormatter(vols.departure.scheduled)}
               />
             ))}
         </ul>

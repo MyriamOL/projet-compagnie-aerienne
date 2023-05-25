@@ -3,8 +3,10 @@ import "../styles/components/formulaire.css";
 import axios from "axios";
 
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setToken } from "../slice/userSlice";
 
-export default function Connexion({ goToCreationCompte, goToRecuperationMdp, forceClosePopup }) {
+export default function Connexion({ goToCreationCompte, goToRecuperationMdp }) {
   /* connexion */
   const signIn = useSignIn();
   const apiUrl = "http://localhost:8080/connexion";
@@ -12,6 +14,9 @@ export default function Connexion({ goToCreationCompte, goToRecuperationMdp, for
   /* formulaire */
   const [email, setEmail] = useState('');
   const [mdp, setMdp] = useState('');
+
+  /* redux cookie */
+  const dispatch = useDispatch();
 
   /* fonctions formulaire */
   function handleChangeEmail(e) {
@@ -30,8 +35,8 @@ export default function Connexion({ goToCreationCompte, goToRecuperationMdp, for
       mdp: mdp
     })
       .then((response) => {
-        console.log(response.data);
-        console.log(response.data.jwttoken);
+        console.log("cnx token:"+response.data.jwttoken);
+        dispatch(setToken({ val: response.data.jwttoken }));
         signIn({
           token: response.data.jwttoken,
           tokenType: "Bearer",

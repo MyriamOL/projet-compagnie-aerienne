@@ -6,6 +6,7 @@ import "../styles/components/resultat.css";
 
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useIsAuthenticated } from "react-auth-kit";
 
 export default function Resultat({
   idList,
@@ -20,6 +21,7 @@ export default function Resultat({
   gateDep,
   terminalArr,
   gateArr,
+  dateDepart
 }) {
   /* etat de l'element resultat, true si il est ouvert */
   const [expanded, setExpanded] = useState(false);
@@ -30,12 +32,8 @@ export default function Resultat({
   /* useNavigate */
   const navigate = useNavigate();
 
-  /* appel a l'api et redirection vers l'accueil */
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    navigate("/");
-  }
+  /* authentification */
+  const isAuthenticated = useIsAuthenticated();
 
   function switchExpand() {
     if (expanded === false) {
@@ -45,6 +43,23 @@ export default function Resultat({
       setExpanded(false);
       arrowRef.current.src = doubleArrowDown;
     }
+  }
+
+  /* ajout de la reservation a la liste */
+  async function addReservation(e) {
+    e.preventDefault();
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+          "numeroVol": nVol,
+          "aeroportArrivee": aerArr,
+          "dateDepart": dateDepart,
+          "aeroportDepart": aerDep
+      })
+    };
+    await fetch('http://localhost:8080/api/reservations', requestOptions);
+    navigate("/liste-reservations")
   }
 
   return (
@@ -88,13 +103,15 @@ export default function Resultat({
               </ul>
             </div>
             <div className="retour">
-              <form onSubmit={handleSubmit}>
+            {isAuthenticated() &&
+              <form onSubmit={addReservation}>
                 <input
                   type="submit"
                   value="Reserver"
                   className="btnValider"
                 />
               </form>
+            }
             </div>
           </div>
         </div>
